@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Sora", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(1000px 420px at 10% -10%, rgba(249, 115, 22, 0.2), transparent 60%),
+    radial-gradient(900px 380px at 100% 0%, rgba(251, 146, 60, 0.14), transparent 58%),
+    #09090b;
+}
+
+.bg-orb {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(161, 161, 170, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(161, 161, 170, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+  opacity: 0.75;
+}
+
+.panel {
+  border: 1px solid rgba(113, 113, 122, 0.32);
+  background: linear-gradient(155deg, rgba(39, 39, 42, 0.5), rgba(9, 9, 11, 0.75));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+
+.chapter-card {
+  border: 1px solid rgba(82, 82, 91, 0.45);
+  background: linear-gradient(180deg, rgba(39, 39, 42, 0.62), rgba(24, 24, 27, 0.68));
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.chapter-card:hover {
+  border-color: rgba(249, 115, 22, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.12);
+}
+
+.stat-card {
+  border: 1px solid rgba(82, 82, 91, 0.42);
+  background: rgba(24, 24, 27, 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter-card {
+    transition: none;
+  }
+
+  .chapter-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
